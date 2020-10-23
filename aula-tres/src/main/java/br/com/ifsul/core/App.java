@@ -1,33 +1,27 @@
 package br.com.ifsul.core;
 
 import java.math.BigDecimal;
+import br.com.ifsul.core.model.*;
 
-import br.com.ifsul.core.model.Conta;
-import br.com.ifsul.core.model.Pessoa;
 /**
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args ) {
-        
-        //http:
-        
-        //Pessoa pessoa = new Pessoa();
+public class App {
+    public static void main(String[] args) {
+
+   
+        // Pessoa pessoa = new Pessoa();
         Conta minhaConta = Conta.createConta("Rodrigo", 1, 171, BigDecimal.ONE);
 
-        
-             
-        
-        //Conta minhaContaDois = new Conta("Rodrigo", 1, 171, BigDecimal.ONE);
-        //minhaContaDois.depositar(BigDecimal.valueOf(1000L));
+        Pais pais = new Pais("Brasil", "BR");
+        Estado estado = new Estado("Rio grande do Sul", "RS", pais );
+        Cidade cidade = new Cidade("Bagé", "BG", estado);
+        Pessoa pessoaUm = new Pessoa("Thales Salazar" , "07/06/2000", cidade);
 
-        //System.out.println(minhaContaDois.sacar(BigDecimal.TEN));
-
-        
-       // System.out.println("Correntista da conta um: " + minhaConta.correntista);
-       // System.out.println("Correntista da conta dois: " + minhaContaDois.correntista);
-
+        System.out.println(pessoaUm);
+        System.out.println(estado);
+        System.out.println(cidade);
+        System.out.println(pais);
     }
 }

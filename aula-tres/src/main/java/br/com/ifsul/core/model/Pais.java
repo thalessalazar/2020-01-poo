@@ -29,5 +29,9 @@ public class Pais {
         this.sigla = sigla;
     }
 
-
+    @Override
+    public String toString() {
+        return "Pais:" + this.nome + "\n"
+        + "Sigla:" + this.sigla;
+    }
 }

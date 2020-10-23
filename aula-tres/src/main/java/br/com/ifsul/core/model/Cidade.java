@@ -7,9 +7,44 @@ public class Cidade {
     private String sigla;
     private Estado estado;
 
-    public Cidade(){}
+    public Cidade(String nome, String sigla, Estado estado){
+        this.nome = nome;
+        this.sigla = sigla;
+        this.estado = estado;
+    }
 
     public Cidade(Estado estado) {
         this.estado = estado;
+    }
+
+    public String getNome(){
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSigla(){
+        return this.sigla;
+    }
+
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
+    }
+
+    public Estado getEstado() {
+        return this.estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Cidade:" + this.nome + "\n"
+            + "Sigla:" + this.sigla + "\n"
+            + "Estado:" + this.estado;
     }
 }
