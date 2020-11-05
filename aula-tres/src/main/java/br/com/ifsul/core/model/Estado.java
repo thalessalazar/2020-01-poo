@@ -1,5 +1,7 @@
 package br.com.ifsul.core.model;
 
+import java.util.Objects;
+
 public class Estado {
 
     private String nome;
@@ -47,6 +49,24 @@ public class Estado {
         return "Estado:" + this.nome + "\n"
             + "Sigla:" + this.sigla + "\n"
             + "Pais:" + this.pais;
+    }
+
+
+    @Override
+    public boolean equals(Object object) {
+      if (this == object) return true;
+      if (object == null || this.getClass() != object.getClass()) return false;
+  
+      Estado estado = (Estado) object;
+  
+      return  Objects.equals(nome, estado.nome) &&
+              Objects.equals(sigla, estado.sigla) &&
+              Objects.equals(pais, estado.pais);
+    }
+  
+    @Override
+    public int hashCode() {
+      return Objects.hash(nome, sigla, pais);
     }
 
 }

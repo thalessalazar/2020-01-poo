@@ -3,6 +3,7 @@ package br.com.ifsul.core.model;
 
 //importacao do tipo BigDecimal da lib math
 import java.math.BigDecimal;
+import java.util.Objects;
 
 //Classe Conta
 public class Conta {
@@ -98,6 +99,26 @@ public class Conta {
         }
         this.saldo = this.saldo.subtract(valor);
         return "Saque realizado com sucesso.";
+    }
+
+    
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || this.getClass() != object.getClass()) return false;
+
+        Conta conta = (Conta) object;
+
+        return  Objects.equals(correntista, conta.correntista) &&
+                Objects.equals(numeroConta, conta.numeroConta) &&
+                Objects.equals(agencia, conta.agencia) &&
+                Objects.equals(saldo, conta.saldo) &&
+                Objects.equals(pessoa, conta.pessoa);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(correntista, numeroConta, agencia, saldo, pessoa);
     }
 
     

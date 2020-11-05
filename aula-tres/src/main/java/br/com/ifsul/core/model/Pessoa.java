@@ -1,6 +1,6 @@
 package br.com.ifsul.core.model;
 
-import java.util.Date;
+import java.util.Objects;
 
 public class Pessoa {
 
@@ -44,4 +44,22 @@ public class Pessoa {
         return "Nome" + this.nome + "\n"
             + "Nascimento:" + this.nascimento + "\n"
             + "Cidade:" + this.cidade + "\n";
+    }
+
+    @Override
+    public boolean equals(Object object) {
+      if (this == object) return true;
+      if (object == null || this.getClass() != object.getClass()) return false;
+  
+      Pessoa pessoa = (Pessoa) object;
+  
+      return  Objects.equals(nome, pessoa.nome) &&
+              Objects.equals(nascimento, pessoa.nascimento) &&
+              Objects.equals(cidade, pessoa.cidade);
+    }
+  
+    @Override
+    public int hashCode() {
+      return Objects.hash(nome, nascimento, cidade);
+    }
 }

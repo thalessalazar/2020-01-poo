@@ -10,7 +10,6 @@ import br.com.ifsul.core.model.*;
 public class App {
     public static void main(String[] args) {
 
-   
         // Pessoa pessoa = new Pessoa();
         Conta minhaConta = Conta.createConta("Rodrigo", 1, 171, BigDecimal.ONE);
 
