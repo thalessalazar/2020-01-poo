@@ -1,11 +1,15 @@
 package br.com.ifsul.core.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Pais {
 
   private String nome;
   private String sigla;
+  private List<Estado> estado = new ArrayList<>();
+
 
   public Pais() {}
 
@@ -30,6 +34,14 @@ public class Pais {
     this.sigla = sigla;
   }
 
+  public void setEstado(List<Estado> estado) {
+    this.estado = estado;
+  }
+
+  public List<Estado> getEstado() {
+    return estado;
+  }
+
   @Override
   public String toString() {
     return "Pais:" + this.nome + "\n" + "Sigla:" + this.sigla;
@@ -49,4 +61,9 @@ public class Pais {
   public int hashCode() {
     return Objects.hash(nome, sigla);
   }
+
+  public void addCidade(List<Estado> estado) {
+    this.estado.addAll(estado);
+  }
+
 }

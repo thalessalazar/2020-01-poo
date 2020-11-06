@@ -1,11 +1,15 @@
 package br.com.ifsul.core.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
 
 public class Estado {
 
     private String nome;
     private String sigla;
+    private List<Cidade> cidade = new ArrayList<>();
     private Pais pais;
 
     public Estado(){}
@@ -44,13 +48,18 @@ public class Estado {
         this.pais = pais;
     }
 
-    @Override
-    public String toString() {
-        return "Estado:" + this.nome + "\n"
-            + "Sigla:" + this.sigla + "\n"
-            + "Pais:" + this.pais;
+    public void setCidade(List<Cidade> cidade) {
+        this.cidade = cidade;
     }
 
+    public List<Cidade> getCidade() {
+        return cidade;
+    }
+    
+    @Override
+    public String toString() {
+        return nome;
+    }
 
     @Override
     public boolean equals(Object object) {
@@ -67,6 +76,10 @@ public class Estado {
     @Override
     public int hashCode() {
       return Objects.hash(nome, sigla, pais);
+    }
+
+    public void addCidade(List<Cidade> cidade) {
+        this.cidade.addAll(cidade);
     }
 
 }

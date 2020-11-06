@@ -25,7 +25,7 @@ public class Conta {
     //Abaixo temos o nosso construtor sobrecarregado
     //que serve para criarmos instancias da nossa classe Conta
     //com os atributos populados (ou seja com dados)
-    private Conta(String correntista, int numeroConta, int agencia, BigDecimal saldo) {
+    private Conta(String correntista, int numeroConta, int agencia, BigDecimal saldo, Pessoa pessoa) {
         //Abaixo estaremos populando nossos atributos
         //com os valores passando nos paramentros
         //no momento da criacao da nossa classe 
@@ -33,12 +33,13 @@ public class Conta {
         this.numeroConta = numeroConta;
         this.agencia = agencia;
         this.saldo = saldo;
+        this.pessoa = pessoa;
     }
 
 
     public static Conta createConta(String correntista, int numeroConta,
-     int agencia, BigDecimal saldo) {
-        return new Conta(correntista,numeroConta,agencia,saldo);
+     int agencia, BigDecimal saldo, Pessoa pessoa) {
+        return new Conta(correntista,numeroConta,agencia,saldo, pessoa);
     }
 
 
